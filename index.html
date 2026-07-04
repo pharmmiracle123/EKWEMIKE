@@ -1,0 +1,3443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ekwemike Family Community | One Heritage • One Future</title>
+
+<meta name="description"
+content="Official digital platform for the Ekwemike Family Community. Connecting generations, preserving heritage and empowering the future.">
+
+<meta name="keywords"
+content="Ekwemike Family, Family Community, Heritage, Nigeria, Family Tree">
+
+<meta name="theme-color" content="#0f766e">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+
+<script>
+
+tailwind.config = {
+
+theme:{
+
+extend:{
+
+colors:{
+
+primary:"#0F766E",
+
+secondary:"#14B8A6",
+
+accent:"#22C55E",
+
+dark:"#0F172A"
+
+},
+
+fontFamily:{
+
+poppins:["Poppins","sans-serif"]
+
+},
+
+boxShadow:{
+
+glass:"0 8px 32px rgba(0,0,0,.12)",
+
+card:"0 20px 50px rgba(15,118,110,.15)"
+
+},
+
+animation:{
+
+float:"float 6s ease-in-out infinite",
+
+fade:"fade 1s ease",
+
+pulseSlow:"pulseSlow 4s infinite"
+
+}
+
+}
+
+}
+
+}
+
+</script>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:#F8FAFC;
+
+overflow-x:hidden;
+
+color:#0F172A;
+
+}
+
+/* Loading Screen */
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.8s;
+
+}
+
+.loader-circle{
+
+width:70px;
+
+height:70px;
+
+border:6px solid #d1fae5;
+
+border-top:6px solid #0F766E;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+background:
+
+linear-gradient(rgba(15,23,42,.70),rgba(15,23,42,.75)),
+
+url("https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+background:#14B8A6;
+
+filter:blur(160px);
+
+opacity:.18;
+
+top:-250px;
+
+right:-180px;
+
+border-radius:50%;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#22C55E;
+
+filter:blur(140px);
+
+opacity:.15;
+
+bottom:-180px;
+
+left:-150px;
+
+border-radius:50%;
+
+}
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 8px 32px rgba(0,0,0,.15);
+
+}
+
+.nav-link{
+
+position:relative;
+
+transition:.3s;
+
+}
+
+.nav-link:hover{
+
+color:#14B8A6;
+
+}
+
+.nav-link::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-6px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:#14B8A6;
+
+transition:.35s;
+
+}
+
+.nav-link:hover::after{
+
+width:100%;
+
+}
+
+.hero-btn{
+
+transition:.35s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 40px rgba(20,184,166,.30);
+
+}
+
+.floating{
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.gradient-text{
+
+background:linear-gradient(90deg,#5EEAD4,#22C55E);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.blur-ball{
+
+position:absolute;
+
+border-radius:9999px;
+
+filter:blur(100px);
+
+opacity:.35;
+
+z-index:0;
+
+}
+
+.blur-one{
+
+width:250px;
+
+height:250px;
+
+background:#14B8A6;
+
+top:10%;
+
+left:5%;
+
+}
+
+.blur-two{
+
+width:280px;
+
+height:280px;
+
+background:#22C55E;
+
+bottom:8%;
+
+right:5%;
+
+}
+
+.section-title{
+
+font-size:clamp(2rem,4vw,4rem);
+
+font-weight:800;
+
+}
+
+</style>
+
+</head>
+
+<body class="font-poppins">
+
+<!-- Loading Screen -->
+
+<div id="loader">
+
+<div class="loader-circle"></div>
+
+</div>
+
+<!-- The Premium Navbar starts in the next chunk --><!-- ========================= -->
+<!-- PREMIUM GLASS NAVIGATION -->
+<!-- ========================= -->
+
+<header
+class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+
+<nav
+class="glass mx-auto max-w-7xl mt-4 rounded-2xl px-6 lg:px-10 py-4">
+
+<div class="flex items-center justify-between">
+
+<!-- Logo -->
+
+<a href="#"
+class="flex items-center gap-4">
+
+<div
+class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xl shadow-xl">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<div>
+
+<h2 class="text-2xl font-extrabold text-white">
+
+Ekwemike Family
+
+</h2>
+
+<p class="text-gray-200 text-sm">
+
+One Heritage • One Future
+
+</p>
+
+</div>
+
+</a>
+
+<!-- Desktop Menu -->
+
+<ul
+class="hidden lg:flex items-center gap-8 text-white font-medium">
+
+<li>
+<a href="#about" class="nav-link">
+About
+</a>
+</li>
+
+<li>
+<a href="#tree" class="nav-link">
+Family Tree
+</a>
+</li>
+
+<li>
+<a href="#members" class="nav-link">
+Members
+</a>
+</li>
+
+<li>
+<a href="#graduates" class="nav-link">
+Graduates
+</a>
+</li>
+
+<li>
+<a href="#businesses" class="nav-link">
+Businesses
+</a>
+</li>
+
+<li>
+<a href="#events" class="nav-link">
+Events
+</a>
+</li>
+
+<li>
+<a href="#gallery" class="nav-link">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="#contact"
+class="bg-primary px-5 py-3 rounded-xl hover:bg-secondary transition">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+<!-- Mobile Button -->
+
+<button
+id="menuBtn"
+class="lg:hidden text-white text-3xl">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
+
+<!-- Mobile Navigation -->
+
+<div
+id="mobileMenu"
+class="hidden mt-6 border-t border-white/20 pt-5">
+
+<div
+class="flex flex-col gap-5 text-white text-lg">
+
+<a href="#about">About</a>
+
+<a href="#tree">Family Tree</a>
+
+<a href="#members">Members</a>
+
+<a href="#graduates">Graduates</a>
+
+<a href="#businesses">Businesses</a>
+
+<a href="#events">Events</a>
+
+<a href="#gallery">Gallery</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
+
+const mobileMenu=document.getElementById("mobileMenu");
+
+menuBtn.onclick=()=>{
+
+mobileMenu.classList.toggle("hidden");
+
+}
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.querySelector("nav");
+
+if(window.scrollY>50){
+
+nav.classList.add("shadow-2xl");
+
+}else{
+
+nav.classList.remove("shadow-2xl");
+
+}
+
+});
+
+</script>
+
+<!-- ========================= -->
+<!-- HERO SECTION STARTS NEXT -->
+<!-- ========================= -->
+<!-- ========================= -->
+<!-- PREMIUM HERO SECTION -->
+<!-- Paste directly after </header> -->
+<!-- ========================= -->
+
+<section class="hero relative">
+
+<!-- Background Blur -->
+<div class="blur-ball blur-one"></div>
+<div class="blur-ball blur-two"></div>
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+
+<div class="grid lg:grid-cols-2 gap-16 items-center min-h-screen pt-32">
+
+<!-- LEFT CONTENT -->
+
+<div>
+
+<span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 text-sm text-teal-200 mb-8">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+Welcome to Our Official Digital Community
+
+</span>
+
+<h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-white">
+
+Connecting
+
+<span class="gradient-text">
+
+Generations
+
+</span>
+
+<br>
+
+Building
+
+Our Future Together.
+
+</h1>
+
+<p class="mt-8 text-xl text-gray-200 leading-9 max-w-xl">
+
+The official digital home of the Ekwemike Family Community where every member can connect, preserve our heritage, celebrate achievements, discover opportunities and strengthen our family bond across the world.
+
+</p>
+
+<div class="flex flex-wrap gap-5 mt-12">
+
+<a href="#members"
+
+class="hero-btn bg-primary hover:bg-secondary px-8 py-4 rounded-xl text-white font-semibold shadow-xl">
+
+<i class="fa-solid fa-users mr-2"></i>
+
+Explore Members
+
+</a>
+
+<a href="#tree"
+
+class="hero-btn border border-white px-8 py-4 rounded-xl text-white hover:bg-white hover:text-slate-900">
+
+<i class="fa-solid fa-tree mr-2"></i>
+
+Family Tree
+
+</a>
+
+</div>
+
+<div class="grid grid-cols-3 gap-6 mt-14">
+
+<div>
+
+<h2 class="text-4xl font-extrabold text-teal-300">
+
+500+
+
+</h2>
+
+<p class="text-gray-300">
+
+Members
+
+</p>
+
+</div>
+
+<div>
+
+<h2 class="text-4xl font-extrabold text-green-300">
+
+35+
+
+</h2>
+
+<p class="text-gray-300">
+
+Businesses
+
+</p>
+
+</div>
+
+<div>
+
+<h2 class="text-4xl font-extrabold text-cyan-300">
+
+20+
+
+</h2>
+
+<p class="text-gray-300">
+
+Countries
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT CONTENT -->
+
+<div class="relative hidden lg:block">
+
+<div class="glass rounded-[35px] p-8 floating">
+
+<img
+
+src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80"
+
+class="rounded-3xl w-full h-[520px] object-cover">
+
+</div>
+
+<div
+
+class="glass absolute -top-6 -left-10 p-5 rounded-2xl w-60">
+
+<div class="flex items-center gap-3">
+
+<div class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center text-white">
+
+<i class="fa-solid fa-user-group"></i>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold">
+
+Growing Together
+
+</h4>
+
+<p class="text-gray-200 text-sm">
+
+Global Family Network
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+class="glass absolute bottom-8 -right-10 p-5 rounded-2xl w-64">
+
+<div class="flex items-center gap-3">
+
+<div class="bg-primary w-12 h-12 rounded-full flex items-center justify-center text-white">
+
+<i class="fa-solid fa-award"></i>
+
+</div>
+
+<div>
+
+<h4 class="text-white font-bold">
+
+Education & Success
+
+</h4>
+
+<p class="text-gray-200 text-sm">
+
+Empowering Future Generations
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Scroll Indicator -->
+
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+
+<a href="#about">
+
+<div class="w-10 h-16 rounded-full border-2 border-white flex justify-center">
+
+<div class="w-2 h-4 bg-white rounded-full mt-3 animate-pulse"></div>
+
+</div>
+
+</a>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- ABOUT SECTION -->
+<!-- ========================= -->
+
+<section id="about" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+
+<!-- IMAGE -->
+
+<div class="relative">
+
+<img
+src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+class="rounded-[35px] shadow-2xl w-full object-cover">
+
+<div class="absolute -bottom-8 -right-8 glass rounded-3xl p-6 w-64">
+
+<div class="flex items-center gap-4">
+
+<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white text-2xl">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div>
+
+<h3 class="text-white font-bold text-lg">
+
+Family First
+
+</h3>
+
+<p class="text-gray-200 text-sm">
+
+Building lasting relationships.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div>
+
+<span class="text-primary font-semibold uppercase tracking-widest">
+
+About Our Community
+
+</span>
+
+<h2 class="section-title mt-3">
+
+Preserving Our Heritage,
+
+<span class="gradient-text">
+
+Together
+
+</span>
+
+</h2>
+
+<p class="text-gray-600 mt-8 leading-8">
+
+The Ekwemike Family Community is a unified digital platform created to strengthen relationships among family members across generations and continents. Through collaboration, mentorship, education, entrepreneurship, and cultural preservation, we continue to build a stronger future for every member of our family.
+
+</p>
+
+<div class="grid sm:grid-cols-2 gap-6 mt-10">
+
+<div class="bg-white rounded-3xl shadow-card p-6 hover:-translate-y-2 transition duration-300">
+
+<div class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl">
+
+<i class="fa-solid fa-eye"></i>
+
+</div>
+
+<h3 class="font-bold text-xl mt-5">
+
+Our Vision
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+To become a globally connected family community where every member has access to opportunities, support, and lifelong relationships.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-6 hover:-translate-y-2 transition duration-300">
+
+<div class="w-14 h-14 rounded-2xl bg-secondary text-white flex items-center justify-center text-2xl">
+
+<i class="fa-solid fa-bullseye"></i>
+
+</div>
+
+<h3 class="font-bold text-xl mt-5">
+
+Our Mission
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+To preserve our heritage while empowering every generation through education, innovation, leadership, and unity.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CORE VALUES -->
+
+<div class="mt-24">
+
+<div class="text-center">
+
+<h2 class="section-title">
+
+Our Core Values
+
+</h2>
+
+<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+
+The principles that unite and inspire every member of the Ekwemike Family Community.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-20 h-20 mx-auto rounded-full bg-primary flex items-center justify-center text-white text-3xl">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h3 class="font-bold text-2xl mt-6">
+
+Unity
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Standing together with one purpose, one family and one future.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-20 h-20 mx-auto rounded-full bg-secondary flex items-center justify-center text-white text-3xl">
+
+<i class="fa-solid fa-book-open"></i>
+
+</div>
+
+<h3 class="font-bold text-2xl mt-6">
+
+Knowledge
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Promoting education, mentorship and lifelong learning.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-20 h-20 mx-auto rounded-full bg-green-600 flex items-center justify-center text-white text-3xl">
+
+<i class="fa-solid fa-handshake"></i>
+
+</div>
+
+<h3 class="font-bold text-2xl mt-6">
+
+Support
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Helping one another through every stage of life.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-20 h-20 mx-auto rounded-full bg-indigo-600 flex items-center justify-center text-white text-3xl">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+</div>
+
+<h3 class="font-bold text-2xl mt-6">
+
+Innovation
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Using technology and creativity to empower future generations.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- PART A.3 : FAMILY DASHBOARD & FAMILY TREE -->
+<!-- ========================================= -->
+
+<section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+
+<div class="absolute inset-0 opacity-10">
+<div class="absolute w-96 h-96 bg-teal-500 rounded-full blur-3xl -top-24 -left-24"></div>
+<div class="absolute w-96 h-96 bg-green-500 rounded-full blur-3xl bottom-0 right-0"></div>
+</div>
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+
+<div class="text-center mb-16">
+
+<span class="uppercase tracking-[6px] text-teal-300 font-semibold">
+
+Community Dashboard
+
+</span>
+
+<h2 class="section-title text-white mt-4">
+
+Our Family In Numbers
+
+</h2>
+
+<p class="text-gray-300 mt-4 max-w-3xl mx-auto">
+
+Every member contributes to making the Ekwemike Family stronger. Together we continue to grow, inspire and preserve our heritage across generations.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-teal-300 mb-4">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+500+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Registered Members
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-green-300 mb-4">
+
+<i class="fa-solid fa-earth-africa"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+20+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Countries
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-cyan-300 mb-4">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+180+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Graduates
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-yellow-300 mb-4">
+
+<i class="fa-solid fa-briefcase"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+35+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Businesses
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-pink-300 mb-4">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+70+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Healthcare Professionals
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-orange-300 mb-4">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+12
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Family Branches
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-purple-300 mb-4">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+25+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Annual Activities
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8 text-center hover:scale-105 transition">
+
+<div class="text-5xl text-blue-300 mb-4">
+
+<i class="fa-solid fa-award"></i>
+
+</div>
+
+<h3 class="text-5xl font-extrabold">
+
+100+
+
+</h3>
+
+<p class="mt-3 text-gray-300">
+
+Achievements
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FAMILY TREE -->
+<!-- ========================================= -->
+
+<section id="tree" class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="text-center mb-20">
+
+<span class="text-primary uppercase tracking-[5px] font-semibold">
+
+Our Heritage
+
+</span>
+
+<h2 class="section-title mt-3">
+
+Interactive Family Tree
+
+</h2>
+
+<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+
+Discover your roots, trace your lineage and connect with relatives from every branch of the Ekwemike Family.
+
+</p>
+
+</div>
+
+<div class="overflow-x-auto">
+
+<div class="min-w-[1100px]">
+
+<!-- ROOT -->
+
+<div class="flex justify-center">
+
+<div class="bg-primary text-white rounded-3xl px-10 py-6 shadow-card text-center">
+
+<i class="fa-solid fa-crown text-4xl mb-4"></i>
+
+<h3 class="text-2xl font-bold">
+
+Great Ancestor
+
+</h3>
+
+<p class="text-teal-100">
+
+Founder of the Family Lineage
+
+</p>
+
+</div>
+
+</div>
+
+<div class="flex justify-center">
+
+<div class="w-1 h-16 bg-primary"></div>
+
+</div>
+
+<div class="grid grid-cols-3 gap-16">
+
+<!-- Branch A -->
+
+<div class="bg-slate-50 rounded-3xl shadow-card p-8">
+
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-primary text-white mx-auto flex items-center justify-center text-3xl">
+
+A
+
+</div>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Branch A
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Head of Branch
+
+</p>
+
+</div>
+
+<hr class="my-6">
+
+<ul class="space-y-4">
+
+<li>• Family Head</li>
+
+<li>• First Generation</li>
+
+<li>• Second Generation</li>
+
+<li>• Third Generation</li>
+
+</ul>
+
+</div>
+
+<!-- Branch B -->
+
+<div class="bg-slate-50 rounded-3xl shadow-card p-8">
+
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-secondary text-white mx-auto flex items-center justify-center text-3xl">
+
+B
+
+</div>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Branch B
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Head of Branch
+
+</p>
+
+</div>
+
+<hr class="my-6">
+
+<ul class="space-y-4">
+
+<li>• Family Head</li>
+
+<li>• First Generation</li>
+
+<li>• Second Generation</li>
+
+<li>• Third Generation</li>
+
+</ul>
+
+</div>
+
+<!-- Branch C -->
+
+<div class="bg-slate-50 rounded-3xl shadow-card p-8">
+
+<div class="text-center">
+
+<div class="w-20 h-20 rounded-full bg-green-600 text-white mx-auto flex items-center justify-center text-3xl">
+
+C
+
+</div>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Branch C
+
+</h3>
+
+<p class="text-gray-600 mt-3">
+
+Head of Branch
+
+</p>
+
+</div>
+
+<hr class="my-6">
+
+<ul class="space-y-4">
+
+<li>• Family Head</li>
+
+<li>• First Generation</li>
+
+<li>• Second Generation</li>
+
+<li>• Third Generation</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-16 text-center">
+
+<a href="#members"
+
+class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl hover:bg-secondary transition">
+
+<i class="fa-solid fa-diagram-project"></i>
+
+Explore Complete Family Tree
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- DIGITAL RESOURCE CENTER -->
+<!-- Minutes • Meeting Links • Documents -->
+<!-- ========================================= -->
+
+<section id="resources" class="py-24 bg-gradient-to-br from-slate-50 via-white to-teal-50">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<!-- Header -->
+
+<div class="text-center mb-16">
+
+<span class="uppercase tracking-[6px] text-primary font-semibold">
+Family Resources
+</span>
+
+<h2 class="section-title mt-4">
+Digital Resource Center
+</h2>
+
+<p class="text-gray-600 mt-5 max-w-3xl mx-auto">
+Access meeting minutes, presentation slides, official reports, policy documents, webinar recordings, and other important family resources from one secure location.
+</p>
+
+</div>
+
+<!-- Resources -->
+
+<div class="grid lg:grid-cols-2 gap-8">
+
+<!-- Minutes -->
+
+<div class="bg-white rounded-[30px] shadow-card p-8 hover:-translate-y-2 transition">
+
+<div class="flex items-center gap-4 mb-6">
+
+<div class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center text-3xl">
+
+<i class="fa-solid fa-file-lines"></i>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl font-bold">
+Meeting Minutes
+</h3>
+
+<p class="text-gray-500">
+Official meeting records
+</p>
+
+</div>
+
+</div>
+
+<p class="text-gray-600 leading-8">
+Read or download the minutes of previous family meetings, executive meetings and annual general meetings.
+</p>
+
+<a href="#"
+class="inline-flex items-center gap-3 mt-8 bg-primary text-white px-6 py-4 rounded-xl hover:bg-secondary transition">
+
+<i class="fa-solid fa-download"></i>
+
+View Meeting Minutes
+
+</a>
+
+</div>
+
+<!-- Meeting Link -->
+
+<div class="bg-white rounded-[30px] shadow-card p-8 hover:-translate-y-2 transition">
+
+<div class="flex items-center gap-4 mb-6">
+
+<div class="w-16 h-16 rounded-2xl bg-red-600 text-white flex items-center justify-center text-3xl">
+
+<i class="fa-solid fa-video"></i>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl font-bold">
+Virtual Meeting
+</h3>
+
+<p class="text-gray-500">
+Zoom • Google Meet • Teams
+</p>
+
+</div>
+
+</div>
+
+<p class="text-gray-600 leading-8">
+Join scheduled family meetings, conferences and webinars directly using the official meeting link.
+</p>
+
+<a href="#"
+class="inline-flex items-center gap-3 mt-8 bg-red-600 text-white px-6 py-4 rounded-xl hover:bg-red-700 transition">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+Join Meeting
+
+</a>
+
+</div>
+
+<!-- Presentation Slides -->
+
+<div class="bg-white rounded-[30px] shadow-card p-8 hover:-translate-y-2 transition">
+
+<div class="flex items-center gap-4 mb-6">
+
+<div class="w-16 h-16 rounded-2xl bg-orange-500 text-white flex items-center justify-center text-3xl">
+
+<i class="fa-solid fa-display"></i>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl font-bold">
+Presentation Slides
+</h3>
+
+<p class="text-gray-500">
+Meeting & Seminar Materials
+</p>
+
+</div>
+
+</div>
+
+<p class="text-gray-600 leading-8">
+Download PowerPoint presentations, seminar materials and official reports shared during meetings.
+</p>
+
+<a href="#"
+class="inline-flex items-center gap-3 mt-8 bg-orange-500 text-white px-6 py-4 rounded-xl hover:bg-orange-600 transition">
+
+<i class="fa-solid fa-file-powerpoint"></i>
+
+Open Slides
+
+</a>
+
+</div>
+
+<!-- Important Documents -->
+
+<div class="bg-white rounded-[30px] shadow-card p-8 hover:-translate-y-2 transition">
+
+<div class="flex items-center gap-4 mb-6">
+
+<div class="w-16 h-16 rounded-2xl bg-green-600 text-white flex items-center justify-center text-3xl">
+
+<i class="fa-solid fa-folder-open"></i>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl font-bold">
+Official Documents
+</h3>
+
+<p class="text-gray-500">
+Constitution • Reports • Forms
+</p>
+
+</div>
+
+</div>
+
+<p class="text-gray-600 leading-8">
+Access the family constitution, membership forms, financial reports, strategic plans and other official documents.
+</p>
+
+<a href="#"
+class="inline-flex items-center gap-3 mt-8 bg-green-600 text-white px-6 py-4 rounded-xl hover:bg-green-700 transition">
+
+<i class="fa-solid fa-folder"></i>
+
+Open Documents
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+<!-- PART A.4 : PREMIUM MEMBERS DIRECTORY -->
+<!-- ========================================= -->
+
+<section id="members" class="py-24 bg-gradient-to-b from-slate-100 to-white">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="text-center mb-16">
+
+<span class="uppercase tracking-[5px] text-primary font-semibold">
+Our Community
+</span>
+
+<h2 class="section-title mt-3">
+Family Members Directory
+</h2>
+
+<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+Meet the amazing members of the Ekwemike Family Community across different professions and countries.
+</p>
+
+</div>
+
+<!-- SEARCH BAR -->
+
+<div class="max-w-3xl mx-auto mb-14">
+
+<div class="relative">
+
+<input
+type="text"
+id="memberSearch"
+placeholder="Search members by name, profession or location..."
+class="w-full rounded-2xl border border-slate-200 py-5 pl-16 pr-6 text-lg shadow-lg focus:ring-2 focus:ring-primary outline-none">
+
+<i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+
+</div>
+
+</div>
+
+<!-- MEMBER GRID -->
+
+<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+<!-- CARD -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition duration-300">
+
+<div class="relative">
+
+<img
+src="IMG-20240713-WA0004.jpg"
+class="w-full h-72 object-cover">
+
+<span class="absolute top-5 right-5 bg-primary text-white px-4 py-2 rounded-full text-sm">
+
+Website Builder
+
+</span>
+
+</div>
+
+<div class="p-8">
+
+<h3 class="text-2xl font-bold">
+
+Onyeka-Udechukwu Miracle
+
+</h3>
+
+<p class="text-primary font-semibold mt-2">
+
+Software Engineer,Website Developer, Pharmacy Technician
+
+</p>
+
+<div class="space-y-3 mt-6 text-gray-600">
+
+<p>
+<i class="fa-solid fa-location-dot text-primary mr-2"></i>
+Bayelsa, Nigeria
+</p>
+
+<p>
+<i class="fa-solid fa-building mr-2 text-primary"></i>
+Tech Solutions Ltd.
+</p>
+
+<p>
+<i class="fa-solid fa-graduation-cap mr-2 text-primary"></i>
+University Graduate
+</p>
+
+</div>
+
+<div class="flex flex-wrap gap-2 mt-6">
+
+<span class="bg-teal-100 text-teal-700 px-3 py-2 rounded-full text-sm">
+
+HTML
+
+</span>
+
+<span class="bg-blue-100 text-blue-700 px-3 py-2 rounded-full text-sm">
+
+React
+
+</span>
+
+<span class="bg-green-100 text-green-700 px-3 py-2 rounded-full text-sm">
+
+Python
+
+</span>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#"
+class="flex-1 bg-primary text-white py-3 rounded-xl text-center">
+
+Portfolio
+
+</a>
+
+<a href="#"
+class="flex-1 border border-primary text-primary py-3 rounded-xl text-center">
+
+Contact
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition duration-300">
+
+<div class="relative">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80"
+class="w-full h-72 object-cover">
+
+<span class="absolute top-5 right-5 bg-pink-600 text-white px-4 py-2 rounded-full text-sm">
+
+Doctor
+
+</span>
+
+</div>
+
+<div class="p-8">
+
+<h3 class="text-2xl font-bold">
+
+Jane Ekwemike
+
+</h3>
+
+<p class="text-primary font-semibold mt-2">
+
+Medical Doctor
+
+</p>
+
+<div class="space-y-3 mt-6 text-gray-600">
+
+<p>
+<i class="fa-solid fa-location-dot text-primary mr-2"></i>
+Abuja, Nigeria
+</p>
+
+<p>
+<i class="fa-solid fa-hospital mr-2 text-primary"></i>
+Teaching Hospital
+</p>
+
+<p>
+<i class="fa-solid fa-user-doctor mr-2 text-primary"></i>
+Healthcare Professional
+</p>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#"
+class="flex-1 bg-primary text-white py-3 rounded-xl text-center">
+
+Profile
+
+</a>
+
+<a href="#"
+class="flex-1 border border-primary text-primary py-3 rounded-xl text-center">
+
+Message
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition duration-300">
+
+<div class="relative">
+
+<img
+src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80"
+class="w-full h-72 object-cover">
+
+<span class="absolute top-5 right-5 bg-green-600 text-white px-4 py-2 rounded-full text-sm">
+
+Entrepreneur
+
+</span>
+
+</div>
+
+<div class="p-8">
+
+<h3 class="text-2xl font-bold">
+
+Michael Ekwemike
+
+</h3>
+
+<p class="text-primary font-semibold mt-2">
+
+Business Owner
+
+</p>
+
+<div class="space-y-3 mt-6 text-gray-600">
+
+<p>
+<i class="fa-solid fa-location-dot text-primary mr-2"></i>
+Port Harcourt
+</p>
+
+<p>
+<i class="fa-solid fa-briefcase mr-2 text-primary"></i>
+Agriculture
+</p>
+
+<p>
+<i class="fa-solid fa-award mr-2 text-primary"></i>
+Community Leader
+</p>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#"
+class="flex-1 bg-primary text-white py-3 rounded-xl text-center">
+
+Business
+
+</a>
+
+<a href="#"
+class="flex-1 border border-primary text-primary py-3 rounded-xl text-center">
+
+Contact
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- VIEW MORE -->
+
+<div class="text-center mt-16">
+
+<a href="#"
+
+class="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-2xl shadow-xl hover:bg-secondary transition">
+
+<i class="fa-solid fa-users-viewfinder"></i>
+
+View All Family Members
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- PART A.5 : GRADUATES & PROFESSIONALS -->
+<!-- ========================================= -->
+
+<section id="graduates" class="py-24 bg-slate-900 text-white overflow-hidden">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="text-center mb-16">
+
+<span class="uppercase tracking-[6px] text-teal-300 font-semibold">
+Professional Excellence
+</span>
+
+<h2 class="section-title mt-4 text-white">
+Graduates & Professionals
+</h2>
+
+<p class="text-gray-300 mt-5 max-w-3xl mx-auto">
+Celebrating excellence across healthcare, engineering, education, business,
+technology, law and many other professions represented within the Ekwemike Family.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-red-500 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Doctors
+</h3>
+
+<p class="mt-3 text-gray-300">
+Medical Practitioners serving communities worldwide.
+</p>
+
+<h4 class="text-4xl font-extrabold text-teal-300 mt-6">
+25+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-blue-600 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-pills"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Pharmacists
+</h3>
+
+<p class="mt-3 text-gray-300">
+Promoting health through pharmaceutical care.
+</p>
+
+<h4 class="text-4xl font-extrabold text-cyan-300 mt-6">
+18+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-yellow-500 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-gears"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Engineers
+</h3>
+
+<p class="mt-3 text-gray-300">
+Building infrastructure and innovative solutions.
+</p>
+
+<h4 class="text-4xl font-extrabold text-yellow-300 mt-6">
+30+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-purple-600 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Lawyers
+</h3>
+
+<p class="mt-3 text-gray-300">
+Advocates committed to justice and integrity.
+</p>
+
+<h4 class="text-4xl font-extrabold text-pink-300 mt-6">
+15+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-green-600 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Software Developers
+</h3>
+
+<p class="mt-3 text-gray-300">
+Developing world-class digital products and solutions.
+</p>
+
+<h4 class="text-4xl font-extrabold text-green-300 mt-6">
+20+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-indigo-600 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-chalkboard-user"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Lecturers
+</h3>
+
+<p class="mt-3 text-gray-300">
+Inspiring future generations through education.
+</p>
+
+<h4 class="text-4xl font-extrabold text-indigo-300 mt-6">
+22+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-orange-500 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Entrepreneurs
+</h3>
+
+<p class="mt-3 text-gray-300">
+Driving economic growth through innovation and enterprise.
+</p>
+
+<h4 class="text-4xl font-extrabold text-orange-300 mt-6">
+45+
+</h4>
+
+</div>
+
+<!-- CARD -->
+
+<div class="glass rounded-3xl p-8 text-center hover:-translate-y-3 transition">
+
+<div class="w-24 h-24 rounded-full bg-teal-600 mx-auto flex items-center justify-center text-5xl mb-6">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold">
+Students
+</h3>
+
+<p class="mt-3 text-gray-300">
+Preparing to become tomorrow's leaders and innovators.
+</p>
+
+<h4 class="text-4xl font-extrabold text-teal-300 mt-6">
+150+
+</h4>
+
+</div>
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+
+<div class="mt-24">
+
+<div class="glass rounded-[35px] p-10">
+
+<div class="grid lg:grid-cols-4 gap-10 text-center">
+
+<div>
+
+<h2 class="text-5xl font-extrabold text-teal-300">
+180+
+</h2>
+
+<p class="mt-3 text-gray-300">
+University Graduates
+</p>
+
+</div>
+
+<div>
+
+<h2 class="text-5xl font-extrabold text-green-300">
+40+
+</h2>
+
+<p class="mt-3 text-gray-300">
+Master's Degree Holders
+</p>
+
+</div>
+
+<div>
+
+<h2 class="text-5xl font-extrabold text-cyan-300">
+12+
+</h2>
+
+<p class="mt-3 text-gray-300">
+PhD Holders
+</p>
+
+</div>
+
+<div>
+
+<h2 class="text-5xl font-extrabold text-yellow-300">
+300+
+</h2>
+
+<p class="mt-3 text-gray-300">
+Professional Certifications
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================================= -->
+<!-- PART A.6 : FAMILY BUSINESS & INVESTMENT HUB -->
+<!-- ========================================= -->
+
+<section id="businesses" class="py-24 bg-gradient-to-br from-white via-slate-50 to-teal-50">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<!-- HEADER -->
+
+<div class="text-center mb-16">
+
+<span class="uppercase tracking-[6px] text-primary font-semibold">
+
+Business Network
+
+</span>
+
+<h2 class="section-title mt-4">
+
+Family Business & Investment Hub
+
+</h2>
+
+<p class="text-gray-600 mt-5 max-w-3xl mx-auto">
+
+Support businesses owned by members of the Ekwemike Family. Connect, collaborate, invest, and grow together by promoting entrepreneurship within our community.
+
+</p>
+
+</div>
+
+<!-- BUSINESS FILTER -->
+
+<div class="flex flex-wrap justify-center gap-4 mb-14">
+
+<button class="px-6 py-3 rounded-full bg-primary text-white shadow-lg">
+All
+</button>
+
+<button class="px-6 py-3 rounded-full bg-white border hover:bg-primary hover:text-white transition">
+Technology
+</button>
+
+<button class="px-6 py-3 rounded-full bg-white border hover:bg-primary hover:text-white transition">
+Healthcare
+</button>
+
+<button class="px-6 py-3 rounded-full bg-white border hover:bg-primary hover:text-white transition">
+Agriculture
+</button>
+
+<button class="px-6 py-3 rounded-full bg-white border hover:bg-primary hover:text-white transition">
+Education
+</button>
+
+<button class="px-6 py-3 rounded-full bg-white border hover:bg-primary hover:text-white transition">
+Construction
+</button>
+
+</div>
+
+<!-- BUSINESS GRID -->
+
+<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+<!-- CARD 1 -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition">
+
+<img
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover">
+
+<div class="p-8">
+
+<div class="flex justify-between items-center">
+
+<h3 class="text-2xl font-bold">
+
+Ekwemike Tech Ltd.
+
+</h3>
+
+<span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+
+Technology
+
+</span>
+
+</div>
+
+<p class="text-gray-600 mt-5 leading-7">
+
+Providing software development, website design, mobile applications, AI solutions and IT consulting services.
+
+</p>
+
+<div class="mt-6 space-y-2 text-gray-600">
+
+<p><i class="fa-solid fa-location-dot text-primary mr-2"></i>Lagos, Nigeria</p>
+
+<p><i class="fa-solid fa-phone text-primary mr-2"></i>+234 xxx xxx xxxx</p>
+
+<p><i class="fa-solid fa-globe text-primary mr-2"></i>www.example.com</p>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#" class="flex-1 bg-primary text-white text-center py-3 rounded-xl">
+
+Visit
+
+</a>
+
+<a href="#" class="flex-1 border border-primary text-primary text-center py-3 rounded-xl">
+
+Contact
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition">
+
+<img
+src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover">
+
+<div class="p-8">
+
+<div class="flex justify-between items-center">
+
+<h3 class="text-2xl font-bold">
+
+Ekwemike Farms
+
+</h3>
+
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+
+Agriculture
+
+</span>
+
+</div>
+
+<p class="text-gray-600 mt-5 leading-7">
+
+Large-scale farming, food processing and agricultural investments supporting food security.
+
+</p>
+
+<div class="mt-6 space-y-2 text-gray-600">
+
+<p><i class="fa-solid fa-location-dot text-primary mr-2"></i>Bayelsa State</p>
+
+<p><i class="fa-solid fa-phone text-primary mr-2"></i>+234 xxx xxx xxxx</p>
+
+<p><i class="fa-solid fa-envelope text-primary mr-2"></i>info@example.com</p>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#" class="flex-1 bg-primary text-white text-center py-3 rounded-xl">
+
+Learn More
+
+</a>
+
+<a href="#" class="flex-1 border border-primary text-primary text-center py-3 rounded-xl">
+
+Invest
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="bg-white rounded-[30px] overflow-hidden shadow-card hover:-translate-y-3 transition">
+
+<img
+src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80"
+class="w-full h-56 object-cover">
+
+<div class="p-8">
+
+<div class="flex justify-between items-center">
+
+<h3 class="text-2xl font-bold">
+
+Ekwemike Medical Centre
+
+</h3>
+
+<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">
+
+Healthcare
+
+</span>
+
+</div>
+
+<p class="text-gray-600 mt-5 leading-7">
+
+Quality healthcare services delivered with excellence through experienced medical professionals.
+
+</p>
+
+<div class="mt-6 space-y-2 text-gray-600">
+
+<p><i class="fa-solid fa-location-dot text-primary mr-2"></i>Port Harcourt</p>
+
+<p><i class="fa-solid fa-phone text-primary mr-2"></i>+234 xxx xxx xxxx</p>
+
+<p><i class="fa-solid fa-clock text-primary mr-2"></i>24 Hours</p>
+
+</div>
+
+<div class="flex gap-3 mt-8">
+
+<a href="#" class="flex-1 bg-primary text-white text-center py-3 rounded-xl">
+
+Website
+
+</a>
+
+<a href="#" class="flex-1 border border-primary text-primary text-center py-3 rounded-xl">
+
+Directions
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="mt-20">
+
+<div class="bg-gradient-to-r from-primary to-secondary rounded-[35px] p-12 text-center text-white shadow-2xl">
+
+<div class="max-w-3xl mx-auto">
+
+<h2 class="text-4xl font-bold">
+
+Do You Own a Business?
+
+</h2>
+
+<p class="mt-6 text-lg leading-8 text-teal-100">
+
+Register your business to become part of the official Ekwemike Family Business Directory and connect with customers, partners, and investors within our global community.
+
+</p>
+
+<div class="flex flex-wrap justify-center gap-5 mt-10">
+
+<a href="#"
+
+class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition">
+
+<i class="fa-solid fa-building-circle-check mr-2"></i>
+
+Register Business
+
+</a>
+
+<a href="#"
+
+class="border border-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition">
+
+<i class="fa-solid fa-handshake mr-2"></i>
+
+Become a Partner
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================================================== -->
+<!-- PART A.7 : COMMUNITY HUB -->
+<!-- Announcements • Events • Scholarships • Mentorship -->
+<!-- Birthdays • Gallery -->
+<!-- ===================================================== -->
+
+<section id="community" class="py-24 bg-slate-100">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<!-- ================= HEADER ================= -->
+
+<div class="text-center mb-20">
+
+<span class="uppercase tracking-[6px] text-primary font-semibold">
+
+Community Hub
+
+</span>
+
+<h2 class="section-title mt-4">
+
+Stay Connected With The Family
+
+</h2>
+
+<p class="text-gray-600 mt-5 max-w-3xl mx-auto">
+
+Discover family announcements, upcoming events, scholarships,
+birthdays, mentorship opportunities and memorable moments.
+
+</p>
+
+</div>
+
+<!-- ================= ANNOUNCEMENTS ================= -->
+
+<section id="announcements" class="mb-24">
+
+<div class="flex items-center justify-between mb-10">
+
+<h2 class="text-3xl font-bold">
+
+📢 Latest Announcements
+
+</h2>
+
+<a href="#" class="text-primary font-semibold">
+
+View All →
+
+</a>
+
+</div>
+
+<div class="grid lg:grid-cols-3 gap-8">
+
+<div class="bg-white rounded-3xl shadow-card p-8 border-l-4 border-primary">
+
+<span class="text-primary font-semibold">
+
+20 Dec 2026
+
+</span>
+
+<h3 class="text-2xl font-bold mt-4">
+
+Annual Family Reunion
+
+</h3>
+
+<p class="text-gray-600 mt-4">
+
+Venue: Family Hall, Bayelsa State.
+
+Registration is now open.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 border-l-4 border-green-600">
+
+<span class="text-green-600 font-semibold">
+
+31 Aug 2026
+
+</span>
+
+<h3 class="text-2xl font-bold mt-4">
+
+Scholarship Applications
+
+</h3>
+
+<p class="text-gray-600 mt-4">
+
+Applications are open for undergraduate and postgraduate students.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 border-l-4 border-red-500">
+
+<span class="text-red-500 font-semibold">
+
+15 Sept 2026
+
+</span>
+
+<h3 class="text-2xl font-bold mt-4">
+
+Emergency Family Meeting
+
+</h3>
+
+<p class="text-gray-600 mt-4">
+
+All branch executives are expected to attend.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+
+<section id="events" class="mb-24">
+
+<h2 class="text-3xl font-bold text-center mb-12">
+
+🎉 Upcoming Events
+
+</h2>
+
+<div class="space-y-6">
+
+<div class="bg-white rounded-3xl shadow-card p-8 flex justify-between items-center">
+
+<div>
+
+<h3 class="font-bold text-2xl">
+
+Family Business Summit
+
+</h3>
+
+<p class="text-gray-600">
+
+Abuja • October 2026
+
+</p>
+
+</div>
+
+<span class="bg-primary text-white px-5 py-3 rounded-xl">
+
+Upcoming
+
+</span>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 flex justify-between items-center">
+
+<div>
+
+<h3 class="font-bold text-2xl">
+
+Youth Leadership Conference
+
+</h3>
+
+<p class="text-gray-600">
+
+Port Harcourt • November 2026
+
+</p>
+
+</div>
+
+<span class="bg-secondary text-white px-5 py-3 rounded-xl">
+
+Registration Open
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SCHOLARSHIPS ================= -->
+
+<section class="mb-24">
+
+<div class="bg-gradient-to-r from-primary to-secondary rounded-[35px] p-12 text-white">
+
+<h2 class="text-4xl font-bold">
+
+🎓 Scholarship Board
+
+</h2>
+
+<p class="mt-6 text-lg text-teal-100">
+
+Supporting the education of our younger generation through
+family-sponsored scholarships.
+
+</p>
+
+<div class="grid md:grid-cols-3 gap-8 mt-12">
+
+<div class="glass rounded-3xl p-6">
+
+<h3 class="font-bold text-xl">
+
+Undergraduate Scholarship
+
+</h3>
+
+<p class="mt-3">
+
+Full tuition support.
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<h3 class="font-bold text-xl">
+
+Postgraduate Grant
+
+</h3>
+
+<p class="mt-3">
+
+Support for Master's & PhD studies.
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<h3 class="font-bold text-xl">
+
+International Study Fund
+
+</h3>
+
+<p class="mt-3">
+
+Travel and education assistance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MENTORSHIP ================= -->
+
+<section class="mb-24">
+
+<h2 class="text-3xl font-bold text-center mb-12">
+
+🤝 Mentorship Programme
+
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<i class="fa-solid fa-laptop-code text-5xl text-primary"></i>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Technology
+
+</h3>
+
+<p class="mt-4 text-gray-600">
+
+Software Engineering, AI and Cybersecurity.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<i class="fa-solid fa-user-doctor text-5xl text-red-500"></i>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Healthcare
+
+</h3>
+
+<p class="mt-4 text-gray-600">
+
+Medicine, Pharmacy, Nursing and Public Health.
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<i class="fa-solid fa-briefcase text-5xl text-green-600"></i>
+
+<h3 class="text-2xl font-bold mt-6">
+
+Business
+
+</h3>
+
+<p class="mt-4 text-gray-600">
+
+Entrepreneurship, Finance and Leadership.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BIRTHDAYS ================= -->
+
+<section class="mb-24">
+
+<h2 class="text-3xl font-bold text-center mb-12">
+
+🎂 Birthday Celebrations
+
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<h3 class="font-bold text-2xl">
+
+Onyeka-Udechukwu Miracle
+
+</h3>
+
+<p class="text-primary mt-3">
+
+Today 🎉
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<h3 class="font-bold text-2xl">
+
+Grace Ekwemike
+
+</h3>
+
+<p class="text-primary mt-3">
+
+Tomorrow
+
+</p>
+
+</div>
+
+<div class="bg-white rounded-3xl shadow-card p-8 text-center">
+
+<h3 class="font-bold text-2xl">
+
+David Ekwemike
+
+</h3>
+
+<p class="text-primary mt-3">
+
+28 July
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<div class="text-center mb-12">
+
+<h2 class="section-title">
+
+📸 Family Gallery
+
+</h2>
+
+<p class="text-gray-600 mt-4">
+
+Reliving unforgettable moments together.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80"
+class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-300">
+
+<img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80"
+class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-300">
+
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-300">
+
+<img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80"
+class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-300">
+
+</div>
+
+</section>
+
+</div>
+
+</section>
+<!-- ===================================================== -->
+<!-- PART A.8 : CONTACT • NEWSLETTER • FOOTER -->
+<!-- ===================================================== -->
+
+<section id="contact" class="py-24 bg-slate-900 text-white">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="grid lg:grid-cols-2 gap-16">
+
+<!-- LEFT -->
+
+<div>
+
+<span class="uppercase tracking-[6px] text-teal-300 font-semibold">
+Contact Us
+</span>
+
+<h2 class="section-title text-white mt-4">
+Let's Keep Our Family Connected
+</h2>
+
+<p class="mt-6 text-gray-300 leading-8">
+Whether you want to update your profile, register your family branch,
+share an opportunity, or contact the executives, we're always happy to hear from you.
+</p>
+
+<div class="space-y-6 mt-10">
+
+<div class="flex items-center gap-5">
+
+<div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
+
+<i class="fa-solid fa-location-dot"></i>
+
+</div>
+
+<div>
+
+<h3 class="font-bold">
+Family Secretariat
+</h3>
+
+<p class="text-gray-300">
+Bayelsa State, Nigeria
+</p>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-5">
+
+<div class="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center">
+
+<i class="fa-solid fa-phone"></i>
+
+</div>
+
+<div>
+
+<h3 class="font-bold">
+Telephone
+</h3>
+
+<p class="text-gray-300">
++234 XXX XXX XXXX
+</p>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-5">
+
+<div class="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center">
+
+<i class="fa-solid fa-envelope"></i>
+
+</div>
+
+<div>
+
+<h3 class="font-bold">
+Email Address
+</h3>
+
+<p class="text-gray-300">
+info@ekwemikefamily.org
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="bg-white rounded-[35px] p-10 shadow-2xl">
+
+<h2 class="text-3xl font-bold text-slate-800">
+
+Send Us A Message
+
+</h2>
+
+<form class="space-y-6 mt-8">
+
+<input
+type="text"
+placeholder="Full Name"
+class="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-primary">
+
+<input
+type="email"
+placeholder="Email Address"
+class="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-primary">
+
+<input
+type="text"
+placeholder="Subject"
+class="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-primary">
+
+<textarea
+rows="6"
+placeholder="Write your message..."
+class="w-full border rounded-xl p-4 outline-none focus:ring-2 focus:ring-primary"></textarea>
+
+<button
+class="w-full bg-primary hover:bg-secondary text-white py-4 rounded-xl font-semibold transition">
+
+<i class="fa-solid fa-paper-plane mr-2"></i>
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+
+<div class="max-w-5xl mx-auto text-center px-6">
+
+<h2 class="text-4xl font-bold">
+
+Subscribe To Our Newsletter
+
+</h2>
+
+<p class="mt-5 text-lg text-teal-100">
+
+Receive family announcements, scholarship updates, birthdays and upcoming events directly in your inbox.
+
+</p>
+
+<div class="flex flex-col md:flex-row gap-4 mt-10">
+
+<input
+type="email"
+placeholder="Enter your email..."
+class="flex-1 p-5 rounded-xl text-slate-800 outline-none">
+
+<button
+class="bg-slate-900 px-10 py-5 rounded-xl font-bold hover:bg-black transition">
+
+Subscribe
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-slate-950 text-white pt-20 pb-10">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+<!-- BRAND -->
+
+<div>
+
+<h2 class="text-3xl font-extrabold">
+
+Ekwemike Family
+
+</h2>
+
+<p class="text-gray-400 mt-6 leading-8">
+
+Preserving our heritage, strengthening relationships,
+empowering generations and building a brighter future together.
+
+</p>
+
+<div class="flex gap-4 mt-8">
+
+<a href="#" class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+<a href="#" class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+<a href="#" class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="#" class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- LINKS -->
+
+<div>
+
+<h3 class="text-xl font-bold mb-6">
+
+Quick Links
+
+</h3>
+
+<ul class="space-y-3 text-gray-400">
+
+<li><a href="#about">About Us</a></li>
+
+<li><a href="#members">Members</a></li>
+
+<li><a href="#tree">Family Tree</a></li>
+
+<li><a href="#businesses">Businesses</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- SERVICES -->
+
+<div>
+
+<h3 class="text-xl font-bold mb-6">
+
+Community
+
+</h3>
+
+<ul class="space-y-3 text-gray-400">
+
+<li>Scholarships</li>
+
+<li>Mentorship</li>
+
+<li>Family Meetings</li>
+
+<li>Career Support</li>
+
+<li>Business Network</li>
+
+<li>Volunteer Programme</li>
+
+</ul>
+
+</div>
+
+<!-- CONTACT -->
+
+<div>
+
+<h3 class="text-xl font-bold mb-6">
+
+Reach Us
+
+</h3>
+
+<p class="text-gray-400 leading-8">
+
+📍 Bayelsa State, Nigeria
+
+</p>
+
+<p class="text-gray-400 mt-3">
+
+📞 +234 XXX XXX XXXX
+
+</p>
+
+<p class="text-gray-400 mt-3">
+
+✉ info@ekwemikefamily.org
+
+</p>
+
+</div>
+
+</div>
+
+<hr class="border-slate-800 my-12">
+
+<div class="flex flex-col lg:flex-row justify-between items-center gap-5">
+
+<p class="text-gray-500 text-center">
+
+© 2026 Ekwemike Family Community. All Rights Reserved.
+
+</p>
+
+<div class="text-center lg:text-right">
+
+<p class="text-gray-400">
+
+Website Designed & Developed by
+
+<strong class="text-white">
+Onyeka-Udechukwu Miracle
+</strong>
+
+</p>
+
+<p class="mt-2">
+
+<a
+href="https://miracardiacportfolio.vercel.app"
+target="_blank"
+class="text-teal-400 hover:text-white transition">
+
+https://miracardiacportfolio.vercel.app
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// Loading Screen
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if(loader){
+        loader.style.opacity = "0";
+        setTimeout(() => loader.style.display = "none", 600);
+    }
+});
+
+// Contact Form
+const form = document.querySelector("form");
+
+if(form){
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        alert("✅ Thank you! Your message has been sent successfully.");
+
+        form.reset();
+    });
+}
+
+</script>
+
+</body>
+</html>
